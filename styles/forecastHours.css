@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  background-color: rgb(243, 243, 243);
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  background-color: #000000ee;
+  width: 100%;
+  height: 50px;
+  font-size: 120%;
+  text-align: center;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+li,
+a {
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+}
+
+a:hover {
+  color: rgb(175, 175, 175);
+  background-color: #4e4d4dfd;
+}
+
+.nav-ul {
+  width: 100%;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: space-evenly;
+}
+
+.title {
+  margin: 90px 0 20px 320px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 3em;
+  width: 3em;
+  background-color: #7c7c7c2b;
+  outline: none;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #7c7c7c6b;
+  cursor: pointer;
+}
+
+.search-bar {
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  font-family: inherit;
+  font-weight: bold;
+  background-color: #7c7c7c2b;
+  color: rgb(19, 19, 19);
+  font-size: 120%;
+  width: 500px;
+}
+
+.hours-selector {
+  padding: 12px;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+}
+
+.hours-selector:hover {
+  cursor: pointer;
+}
+
+.select-label {
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.hourly-section {
+  margin: 100px 0px 40px 10%;
+  width: 80%;
+  border-spacing: 0;
+  text-align: center;
+}
+
+th {
+  padding: 30px;
+  font-size: 25px;
+}
+
+.header-row {
+  background-color: rgba(0, 0, 0, 0.686);
+  color: rgb(255, 255, 255);
+}
+
+.hour-row {
+  background-color: rgba(106, 83, 83, 0.105);
+  margin-bottom: 10px;
+}
+
+.hour-row:nth-child(2n) {
+  background-color: rgba(210, 205, 205, 0.685);
+}
+
+.hour-row > td {
+  padding: 0.8em 0.5em;
+}
+
+.city-name {
+  padding-top: 10px;
+  margin: 0;
+}
+
+.data-hour {
+  margin: 0;
+  padding-top: 10px;
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value-sub-info {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.description {
+  padding: 0;
+}
