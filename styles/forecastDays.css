@@ -121,6 +121,6 @@ button:hover {
 .value-sub-info {
   font-weight: bold;
   font-size: 20px;
-  padding-right: 10px;
   margin: 0;
+  padding-top: 20px;
 }
