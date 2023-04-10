@@ -138,3 +138,63 @@ button:hover {
 .description {
   padding: 0;
 }
+
+@media screen and ((max-width: 1518px) and (min-width: 1240px)) {
+  .search {
+    width: 1000px;
+    margin-left: 150px;
+  }
+
+  .search-bar {
+    width: 350px;
+  }
+
+  .label {
+    font-size: 17px;
+  }
+
+  .day-info {
+    font-size: 15px;
+  }
+
+  .value-sub-info {
+    padding: 10px;
+  }
+}
+
+@media screen and ((max-width: 1240px) and (min-width: 780px)) {
+  .title {
+    margin: 90px 0 20px 40%;
+  }
+
+  .search {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-bar {
+    width: 350px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    height: 4em;
+    width: 4em;
+  }
+
+  .hourly-section {
+    margin: 40px 10%;
+  }
+
+  .value-sub-info {
+    font-size: 12px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+  .description-container {
+    padding-bottom: 0px !important;
+    font-size: 12px;
+  }
+}

@@ -14,7 +14,6 @@ let weather = {
 
   displayActualWeather: function (data) {
     const { name } = data.location
-    console.log(name)
     const { icon, text } = data.current.condition
     const { feelslike_c, wind_kph, temp_c } = data.current
     document.querySelector(".city").innerText = "Vremea in " + name
