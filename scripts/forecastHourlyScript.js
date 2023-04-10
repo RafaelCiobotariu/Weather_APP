@@ -14,7 +14,7 @@ let hourlyWeather = {
         this.apiKey +
         "&q=" +
         city +
-        "&days=1&aqi=no&alerts=no"
+        "&days=2&aqi=no&alerts=no"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -23,14 +23,23 @@ let hourlyWeather = {
   },
   search: function () {
     this.fetchForecastHourlyWeather(document.querySelector(".search-bar").value)
-    selectedHours = document.getElementById("hours-selector").value
   },
 }
 
 function parseHourlyWeather({ forecast, location }) {
   return {
     city: location.name,
-    hours: forecast.forecastday[0].hour.map((hour) => {
+    hoursDay1: forecast.forecastday[0].hour.map((hour) => {
+      return {
+        timestamp: hourFormatter(hour.time),
+        temp: Math.round(hour.temp_c),
+        wind: Math.round(hour.wind_kph),
+        precip: Math.round(hour.precip_mm),
+        icon: hour.condition.icon,
+        description: hour.condition.text,
+      }
+    }),
+    hoursDay2: forecast.forecastday[1].hour.map((hour) => {
       return {
         timestamp: hourFormatter(hour.time),
         temp: Math.round(hour.temp_c),
@@ -54,11 +63,10 @@ const actualHour = new Date().getHours()
 function renderHourlyWeather(hours) {
   let index = 0
   hourlySection.innerHTML = ""
-  hours.hours.forEach((hour) => {
+  hours.hoursDay1.forEach((hour) => {
     if (index < selectedHours) {
       if (hour.timestamp >= actualHour) {
         ++index
-        console.log(index)
         const element = hourRowTemplate.content.cloneNode(true)
         element.querySelector("[data-icon]").src = hour.icon
         setValue("name", hours.city, { parent: element })
@@ -71,10 +79,28 @@ function renderHourlyWeather(hours) {
       }
     }
   })
+  selectedHours = selectedHours - index
+  index = 0
+
+  hours.hoursDay2.forEach((hour) => {
+    if (index < selectedHours) {
+      ++index
+      const element = hourRowTemplate.content.cloneNode(true)
+      element.querySelector("[data-icon]").src = hour.icon
+      setValue("name", hours.city, { parent: element })
+      setValue("hour", hour.timestamp + ":00", { parent: element })
+      setValue("precip", hour.precip, { parent: element })
+      setValue("description", hour.description, { parent: element })
+      setValue("wind", hour.wind, { parent: element })
+      setValue("temp", hour.temp, { parent: element })
+      hourlySection.append(element)
+    }
+  })
 }
 
 document.querySelector(".search button").addEventListener("click", function () {
   hourlyWeather.search()
+  selectedHours = document.getElementById("hours-selector").value
 })
 
 document
@@ -82,6 +108,7 @@ document
   .addEventListener("keyup", function (event) {
     if (event.key == "Enter") {
       hourlyWeather.search()
+      selectedHours = document.getElementById("hours-selector").value
     }
   })
 
