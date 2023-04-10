@@ -99,16 +99,6 @@ button:hover {
   text-align: center;
 }
 
-th {
-  padding: 30px;
-  font-size: 25px;
-}
-
-.header-row {
-  background-color: rgba(0, 0, 0, 0.686);
-  color: rgb(255, 255, 255);
-}
-
 .hour-row {
   background-color: rgba(106, 83, 83, 0.105);
   margin-bottom: 10px;

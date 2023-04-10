@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/forecastHours.css" />
+    <link rel="icon" type="image/x-icon" href="./logo/1527246125.svg" />
     <title>Forecast</title>
   </head>
   <body>
@@ -73,14 +74,6 @@
         </button>
       </section>
       <table class="hourly-section">
-        <tr class="header-row">
-          <th>City</th>
-          <th>Hour</th>
-          <th>Weather</th>
-          <th>Temperature</th>
-          <th>Wind</th>
-          <th>Precipitation</th>
-        </tr>
         <tbody data-hourly-section></tbody>
       </table>
 
@@ -88,14 +81,14 @@
         <tr class="hour-row">
           <td>
             <div class="description-container">
-              <!-- <div class="label">City</div> -->
-              <h2 data-name class="city-name">Oras</h2>
+              <div class="label">City</div>
+              <h2 data-name class="city-name"></h2>
             </div>
           </td>
           <td>
             <div class="description-container">
-              <!-- <div class="label">Hour</div> -->
-              <h2 data-hour class="data-hour">Ora</h2>
+              <div class="label">Hour</div>
+              <h2 data-hour class="data-hour"></h2>
             </div>
           </td>
           <td>
@@ -106,7 +99,7 @@
           </td>
           <td>
             <div class="group">
-              <!-- <div class="label">Temperature</div> -->
+              <div class="label">Temperature</div>
               <div class="value-sub-info">
                 <span data-temp></span><span>C&deg;</span>
               </div>
@@ -114,7 +107,7 @@
           </td>
           <td>
             <div class="group">
-              <!-- <div class="label">Wind</div> -->
+              <div class="label">Wind</div>
               <div class="value-sub-info">
                 <span data-wind></span>Km/h<span></span>
               </div>
@@ -122,7 +115,7 @@
           </td>
           <td>
             <div class="group">
-              <!-- <div class="label">Precipitation</div> -->
+              <div class="label">Precipitation</div>
               <div class="value-sub-info">
                 <span data-precip></span><span>%</span>
               </div>
