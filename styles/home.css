@@ -73,6 +73,13 @@ main {
   height: 50px;
   margin-right: 50px;
   margin-top: 20px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+}
+
+.not-displayed {
+  display: none;
 }
 
 .add-to-fav-btn svg {
@@ -116,6 +123,10 @@ button:hover {
   width: calc(100% - 30px);
 }
 
+.input-check {
+  color: red;
+}
+
 h1.temp {
   margin: 0;
   font-size: 30px;
@@ -138,6 +149,10 @@ img {
   main {
     margin: 0;
     padding: 0;
+  }
+
+  .city {
+    padding-left: 35px;
   }
 
   .card {
@@ -198,5 +213,9 @@ img {
     width: 250px;
     padding: 0.6em 0.7em;
     font-size: 80%;
+  }
+
+  .city {
+    padding-left: 25px;
   }
 }

@@ -1,3 +1,6 @@
+const btn = document.getElementById("add-to-fav-btn")
+btn.classList.add("not-displayed")
+
 let weather = {
   apiKey: "457f8827370049db8c085642230504",
   fetchActualWeather: function (city) {
@@ -12,11 +15,14 @@ let weather = {
       .then((data) => {
         this.displayActualWeather(data)
         document.querySelector(".input-check").innerText = ""
+        document.getElementById("add-to-fav-btn").disabled = false
+        btn.classList.remove("not-displayed")
       })
       .catch((err) => {
         console.log("There was an error: ", err)
         document.querySelector(".input-check").innerText =
           "Please write a city!"
+        btn.classList.add("not-displayed")
       })
   },
 
@@ -24,7 +30,7 @@ let weather = {
     const { name } = data.location
     const { icon, text } = data.current.condition
     const { feelslike_c, wind_kph, temp_c } = data.current
-    document.querySelector(".city").innerText = "Weather " + name
+    document.querySelector(".city").innerText = name
     document.querySelector(".temp").innerHTML = Math.round(temp_c) + " C&#176;"
     document.querySelector(".icon").src = icon
     document.querySelector(".description").innerText = text
@@ -43,21 +49,10 @@ let weather = {
   },
 
   addToFav: function () {
-    const existingItems = JSON.parse(localStorage.getItem("allCity"))
     const cityName = document.querySelector(".city").innerText
-    const str = cityName.split(" ")
-    let finalStr
 
-    str.shift()
-
-    if (str instanceof Array) {
-      finalStr = str.join(" ")
-    } else {
-      finalStr = str
-    }
-
-    if (!allCity.includes(finalStr)) {
-      allCity.push(finalStr)
+    if (!allCity.includes(cityName)) {
+      allCity.push(cityName)
     }
     localStorage.setItem("City", allCity)
 
