@@ -18,6 +18,7 @@
         <ul class="nav-ul">
           <li><a href="../index.html">Home</a></li>
           <li><a href="./forecastDaily.html">Forecast Daily</a></li>
+          <li><a href="./favCities.html">See favorites</a></li>
         </ul>
       </nav>
     </header>
@@ -25,7 +26,15 @@
     <main>
       <h1 class="title">Forecast Hourly</h1>
       <section class="search">
-        <input type="text" class="search-bar" placeholder="Search city" />
+        <div>
+          <input
+            type="text"
+            class="search-bar"
+            placeholder="Search city"
+            required
+          />
+          <p class="input-check"></p>
+        </div>
         <div>
           <label for="hours-selector" class="select-label">
             For how many hours:
@@ -80,7 +89,7 @@
       <template id="hour-row-template">
         <tr class="hour-row">
           <td>
-            <div class="description-container">
+            <div class="description-container city-column">
               <div class="label">City</div>
               <h2 data-name class="city-name"></h2>
             </div>

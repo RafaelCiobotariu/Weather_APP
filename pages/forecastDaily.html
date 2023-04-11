@@ -19,6 +19,7 @@
         <ul class="nav-ul">
           <li><a href="../index.html">Home</a></li>
           <li><a href="./forecastHourly.html">Forecast Hourly</a></li>
+          <li><a href="./favCities.html">See favorites</a></li>
         </ul>
       </nav>
     </header>
@@ -26,7 +27,15 @@
     <main>
       <h1 class="title">Forecast Daily</h1>
       <section class="search">
-        <input type="text" class="search-bar" placeholder="Search city" />
+        <div class="input-div">
+          <input
+            type="text"
+            class="search-bar"
+            placeholder="Search city"
+            required
+          />
+          <p class="input-check"></p>
+        </div>
         <div>
           <label for="days-selector" class="select-label"
             >Choose for how many days:</label

@@ -1,6 +1,19 @@
 body {
   margin: 0;
-  background-color: rgb(243, 243, 243);
+  background-image: url("https://source.unsplash.com/1600x900/?landscape");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+main {
+  background-color: rgba(20, 20, 20, 0.19);
+  margin-left: 10%;
+  width: 80%;
+  padding-bottom: 50px;
+  padding-top: 15px;
+  color: white;
+  min-height: calc(100vh - 65px);
 }
 
 .navbar {
@@ -38,7 +51,7 @@ a:hover {
 }
 
 .title {
-  margin: 90px 0 20px 320px;
+  margin: 90px 0 20px 15%;
 }
 
 .search {
@@ -53,7 +66,7 @@ button {
   border: none;
   height: 3em;
   width: 3em;
-  background-color: #7c7c7c2b;
+  background-color: #fcfcfcc6;
   outline: none;
   transition: 0.2s ease-in-out;
 }
@@ -69,11 +82,18 @@ button:hover {
   padding: 0.5em 1em;
   border-radius: 20px;
   font-family: inherit;
+  background-color: #000000bc;
   font-weight: bold;
-  background-color: #7c7c7c2b;
-  color: rgb(19, 19, 19);
+  color: rgb(232, 226, 226);
   font-size: 120%;
   width: 500px;
+}
+
+.input-check {
+  font-size: 24px;
+  color: red;
+  background-color: black;
+  text-align: center;
 }
 
 .hours-selector {
@@ -93,23 +113,30 @@ button:hover {
 }
 
 .hourly-section {
-  margin: 100px 0px 40px 10%;
+  margin: 100px 10% 40px 10%;
   width: 80%;
+  border-collapse: collapse;
+  border-radius: 2em;
+  overflow: hidden;
   border-spacing: 0;
-  text-align: center;
 }
 
 .hour-row {
-  background-color: rgba(106, 83, 83, 0.105);
+  background-color: rgba(20, 20, 20, 0.865);
   margin-bottom: 10px;
+  color: rgb(212, 212, 212);
 }
 
 .hour-row:nth-child(2n) {
-  background-color: rgba(210, 205, 205, 0.685);
+  background-color: rgba(30, 29, 29, 0.786);
 }
 
 .hour-row > td {
   padding: 0.8em 0.5em;
+}
+
+.city-column {
+  padding-left: 25px;
 }
 
 .city-name {
@@ -139,6 +166,11 @@ button:hover {
   padding: 0;
 }
 
+.group,
+.description-container {
+  text-align: center;
+}
+
 @media screen and ((max-width: 1518px) and (min-width: 1240px)) {
   .search {
     width: 1000px;
@@ -153,12 +185,13 @@ button:hover {
     font-size: 17px;
   }
 
-  .day-info {
-    font-size: 15px;
-  }
-
   .value-sub-info {
     padding: 10px;
+  }
+
+  .value-sub-info.description {
+    padding: 0px;
+    text-align: center;
   }
 }
 
@@ -196,5 +229,150 @@ button:hover {
   .description-container {
     padding-bottom: 0px !important;
     font-size: 12px;
+  }
+}
+
+@media screen and ((max-width: 781px) and (min-width: 520px)) {
+  .navbar {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  li,
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    height: 100%;
+  }
+
+  a:hover {
+    font-size: 15px;
+  }
+
+  .title {
+    margin: 90px 0 20px 15%;
+  }
+
+  .search {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-bar {
+    width: 270px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    height: 4em;
+    width: 4em;
+  }
+
+  .hourly-section {
+    margin-top: 40px;
+    margin-left: 10%;
+  }
+
+  .hour-row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hour-row:nth-child(2n) {
+    background-color: rgba(20, 20, 20, 0.865);
+  }
+
+  .city-name {
+    padding-bottom: 0px;
+  }
+
+  .city-column {
+    padding-bottom: 0px !important;
+    padding-left: 0;
+  }
+
+  .hour-info-column {
+    padding-bottom: 0px !important;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .navbar {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  li,
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    height: 100%;
+  }
+
+  a:hover {
+    font-size: 15px;
+  }
+
+  .search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-bar {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
+  .select-label {
+    font-size: 15px;
+  }
+
+  .hours-selector {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .title {
+    margin: 90px 0 20px 15%;
+  }
+
+  .hourly-section {
+    margin: 40px 10%;
+  }
+
+  .hour-row:nth-child(2n) {
+    background-color: rgba(20, 20, 20, 0.865);
+  }
+
+  .hour-row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hour-row > td {
+    padding: 10px 0 0 0;
+  }
+
+  .city-name {
+    font-size: 12px;
+  }
+
+  .value-sub-info.description {
+    padding: 0px;
+    font-size: 10px;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+
+  .last-group {
+    padding-bottom: 10px;
   }
 }

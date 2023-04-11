@@ -78,6 +78,7 @@ button:hover {
 }
 
 .search-bar {
+  margin-top: 15px;
   border: none;
   outline: none;
   padding: 0.5em 1em;
@@ -88,6 +89,13 @@ button:hover {
   color: rgb(232, 226, 226);
   font-size: 120%;
   width: 500px;
+}
+
+.input-check {
+  font-size: 24px;
+  color: red;
+  background-color: black;
+  text-align: center;
 }
 
 .days-selector {
@@ -108,7 +116,7 @@ button:hover {
 }
 
 .daily-section {
-  margin: 100px 0px 40px 10%;
+  margin: 100px 10% 40px 10%;
   width: 80%;
   border-collapse: collapse;
   border-radius: 2em;
@@ -226,7 +234,7 @@ button:hover {
   }
 }
 
-@media screen and ((max-width: 781px) and (min-width: 450px)) {
+@media screen and ((max-width: 781px) and (min-width: 520px)) {
   .navbar {
     font-size: 15px;
     text-align: center;
@@ -271,6 +279,7 @@ button:hover {
   .day-row {
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
 
   .city-name {
@@ -286,7 +295,7 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 520px) {
   .navbar {
     font-size: 15px;
     text-align: center;
@@ -331,6 +340,7 @@ button:hover {
   .day-row {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .day-row > td {

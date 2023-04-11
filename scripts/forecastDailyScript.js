@@ -25,6 +25,12 @@ let dailyWeather = {
       .then((response) => response.json())
       .then((data) => {
         renderDailyWeather(parseDailyWeather(data))
+        document.querySelector(".input-check").innerText = ""
+      })
+      .catch((err) => {
+        console.log("There was an error: ", err)
+        document.querySelector(".input-check").innerText =
+          "Please write a city!"
       })
   },
 
