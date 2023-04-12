@@ -70,10 +70,43 @@ a:hover {
   .cities {
     font-size: 18px;
   }
+
+  .navbar {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  li,
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    height: 100%;
+  }
+
+  a:hover {
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-width: 650px) {
   .cities {
+    font-size: 15px;
+  }
+  .navbar {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  li,
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    height: 100%;
+  }
+
+  a:hover {
     font-size: 15px;
   }
 }
